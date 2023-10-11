@@ -11,7 +11,7 @@
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
 
 		{#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
-		{#- <meta name="generator" content="{{ eleventy.generator }}"> #}
+		<meta name="generator" content="{{ eleventy.generator }}">
 
 		{#-
 		CSS bundles are provided via the `eleventy-plugin-bundle` plugin:
@@ -32,6 +32,11 @@
 		<style>{% getBundle "css" %}</style>
 		{#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
 		{#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
+		
+		<meta name="twitter:site" content="{{ metadata.author.twitter }}">
+		<meta name="twitter:title" content="{{ title or metadata.title }}">
+		<meta name="twitter:description" content="{{ description or metadata.description }}">
+
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
@@ -48,6 +53,9 @@
 				{%- endfor %}
 				</ul>
 			</nav>
+				<a href="https://github.com/kinshukshah" target="_blank"><img alt="github" src="/img/github.png" width="20" height="20"></a>
+				<a href="https://twitter.com/shahkinshuk" target="_blank"><img alt="twitter" src="/img/twitter.png" width="20" height="20"></a>
+				<a href="https://www.linkedin.com/in/kinshukshah/" target="_blank"><img alt="linkedin" src="/img/linkedin.png" width="20" height="20"></a>
 		</header>
 
 		<main id="skip">
